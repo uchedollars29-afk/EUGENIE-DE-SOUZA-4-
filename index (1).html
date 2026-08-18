@@ -1,0 +1,2042 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EUGENIE DE SOUZA — Sacs en Fil de Pêche</title>
+    <meta name="description" content="Boutique EUGENIE DE SOUZA — Sacs en fil de pêche artisanaux, élégants et uniques. Commandez sur WhatsApp.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-cream: #FAF7F2;
+            --bg-dark: #1A1A1A;
+            --bg-warm: #F5EDE4;
+            --gold: #C5A572;
+            --gold-light: #D4BA8A;
+            --gold-dark: #A88B5E;
+            --brown: #6B4C3B;
+            --brown-dark: #3D2B1F;
+            --text-dark: #1A1A1A;
+            --text-medium: #5A4A3A;
+            --text-light: #8A7A6A;
+            --white: #FFFFFF;
+            --shadow-soft: 0 4px 20px rgba(0,0,0,0.08);
+            --shadow-medium: 0 8px 40px rgba(0,0,0,0.12);
+            --shadow-hover: 0 20px 60px rgba(0,0,0,0.18);
+            --whatsapp: #25D366;
+            --tiktok: #000000;
+            --instagram: #E1306C;
+            --transition: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-cream);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ===== PRELOADER ===== */
+        .preloader {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: var(--bg-cream);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 99999;
+            transition: opacity 0.8s ease, visibility 0.8s ease;
+        }
+
+        .preloader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .preloader-logo {
+            animation: pulseScale 1.5s ease-in-out infinite;
+        }
+
+        .preloader-logo img {
+            width: 120px;
+            filter: drop-shadow(0 2px 8px rgba(197,165,114,0.3));
+        }
+
+        @keyframes pulseScale {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.08); opacity: 0.8; }
+        }
+
+        /* ===== CURSOR ===== */
+        .custom-cursor {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--gold);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 99998;
+            transition: transform 0.15s ease, background 0.2s ease;
+            mix-blend-mode: difference;
+        }
+
+        .custom-cursor.active {
+            transform: scale(2.5);
+            background: var(--gold);
+            mix-blend-mode: normal;
+            opacity: 0.3;
+        }
+
+        /* ===== ANNOUNCEMENT BAR ===== */
+        .announcement-bar {
+            background: var(--brown-dark);
+            color: var(--gold-light);
+            text-align: center;
+            padding: 10px 20px;
+            font-size: 0.8rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 500;
+            overflow: hidden;
+        }
+
+        .announcement-bar span {
+            display: inline-block;
+            animation: marqueeText 15s linear infinite;
+        }
+
+        @keyframes marqueeText {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(250, 247, 242, 0.92);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(197, 165, 114, 0.15);
+            transition: all 0.4s ease;
+        }
+
+        header.scrolled {
+            box-shadow: 0 2px 30px rgba(0,0,0,0.06);
+        }
+
+        .header-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 80px;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            text-decoration: none;
+        }
+
+        .logo-area img {
+            height: 55px;
+            transition: transform 0.3s ease;
+        }
+
+        .logo-area:hover img {
+            transform: scale(1.05);
+        }
+
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--brown-dark);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* NAV */
+        .main-nav {
+            display: flex;
+            align-items: center;
+            gap: 0;
+        }
+
+        .main-nav a {
+            color: var(--text-medium);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 10px 22px;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .main-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 4px;
+            left: 22px;
+            right: 22px;
+            height: 1.5px;
+            background: var(--gold);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.4s var(--transition);
+        }
+
+        .main-nav a:hover {
+            color: var(--gold-dark);
+        }
+
+        .main-nav a:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        .nav-socials {
+            display: flex;
+            gap: 16px;
+            margin-left: 30px;
+            padding-left: 30px;
+            border-left: 1px solid rgba(197,165,114,0.25);
+        }
+
+        .nav-socials a {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border: 1px solid rgba(197,165,114,0.2);
+        }
+
+        .nav-socials a:hover {
+            color: var(--gold);
+            border-color: var(--gold);
+            transform: translateY(-2px);
+        }
+
+        /* HAMBURGER */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .hamburger span {
+            width: 24px;
+            height: 2px;
+            background: var(--brown-dark);
+            transition: 0.3s ease;
+            border-radius: 2px;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        /* MOBILE MENU */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100vh;
+            background: rgba(250, 247, 242, 0.98);
+            backdrop-filter: blur(30px);
+            z-index: 999;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.5s ease;
+        }
+
+        .mobile-menu.open {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .mobile-menu a {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--brown-dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .mobile-menu a:hover {
+            color: var(--gold);
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--bg-cream) 0%, var(--bg-warm) 50%, #EDE4D8 100%);
+        }
+
+        .hero-bg-pattern {
+            position: absolute;
+            inset: 0;
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(197,165,114,0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(107,76,59,0.06) 0%, transparent 40%),
+                radial-gradient(circle at 60% 80%, rgba(197,165,114,0.05) 0%, transparent 45%);
+            animation: bgShift 10s ease-in-out infinite alternate;
+        }
+
+        @keyframes bgShift {
+            0% { opacity: 0.6; transform: scale(1); }
+            100% { opacity: 1; transform: scale(1.05); }
+        }
+
+        .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 140px 40px 100px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-left {
+            position: relative;
+        }
+
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(197,165,114,0.12);
+            border: 1px solid rgba(197,165,114,0.25);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold-dark);
+            font-weight: 600;
+            margin-bottom: 30px;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .hero-tag .dot {
+            width: 6px;
+            height: 6px;
+            background: var(--gold);
+            border-radius: 50%;
+            animation: blink 2s ease-in-out infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            font-weight: 700;
+            line-height: 1.08;
+            color: var(--brown-dark);
+            margin-bottom: 30px;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+
+        .hero-title .highlight {
+            color: var(--gold);
+            font-style: italic;
+        }
+
+        .hero-subtitle {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.35rem;
+            color: var(--text-medium);
+            line-height: 1.7;
+            margin-bottom: 40px;
+            font-weight: 400;
+            animation: fadeInUp 1s ease 0.6s both;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 20px;
+            animation: fadeInUp 1s ease 0.8s both;
+        }
+
+        .btn-primary {
+            background: var(--brown-dark);
+            color: var(--white);
+            padding: 16px 36px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.4s var(--transition);
+            border: 2px solid var(--brown-dark);
+        }
+
+        .btn-primary:hover {
+            background: var(--gold-dark);
+            border-color: var(--gold-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(168,139,94,0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--brown-dark);
+            padding: 16px 36px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            border: 2px solid var(--brown-dark);
+            transition: all 0.4s var(--transition);
+        }
+
+        .btn-secondary:hover {
+            background: var(--brown-dark);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        .hero-right {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-image-container {
+            position: relative;
+            width: 100%;
+            max-width: 480px;
+            animation: heroImageIn 1.2s ease 0.5s both;
+        }
+
+        @keyframes heroImageIn {
+            from { opacity: 0; transform: translateX(60px) scale(0.9); }
+            to { opacity: 1; transform: translateX(0) scale(1); }
+        }
+
+        .hero-image-container img {
+            width: 100%;
+            border-radius: 24px;
+            object-fit: cover;
+            aspect-ratio: 3/4;
+            box-shadow: var(--shadow-medium);
+            transition: transform 0.6s var(--transition);
+        }
+
+        .hero-image-container:hover img {
+            transform: scale(1.03);
+        }
+
+        .hero-image-container::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 150px;
+            height: 150px;
+            border: 2px solid var(--gold);
+            border-radius: 20px;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .hero-image-container::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: -15px;
+            width: 80px;
+            height: 80px;
+            background: var(--gold);
+            border-radius: 50%;
+            opacity: 0.15;
+            animation: float 8s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0); }
+            33% { transform: translate(10px, -10px); }
+            66% { transform: translate(-5px, 5px); }
+        }
+
+        .hero-floating-badge {
+            position: absolute;
+            bottom: 30px;
+            left: -40px;
+            background: var(--white);
+            padding: 16px 22px;
+            border-radius: 16px;
+            box-shadow: var(--shadow-medium);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            animation: fadeInUp 1s ease 1.2s both;
+        }
+
+        .hero-floating-badge .badge-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1rem;
+        }
+
+        .hero-floating-badge .badge-text {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--brown-dark);
+        }
+
+        .hero-floating-badge .badge-sub {
+            font-size: 0.7rem;
+            color: var(--text-light);
+        }
+
+        /* ===== SECTION DIVIDER ===== */
+        .section-divider {
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(90deg, var(--gold), var(--gold-dark));
+            margin: 0 auto 20px;
+            border-radius: 2px;
+        }
+
+        .section-tag {
+            font-size: 0.75rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--gold-dark);
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.2rem;
+            font-weight: 700;
+            color: var(--brown-dark);
+            text-align: center;
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+
+        .section-desc {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            color: var(--text-light);
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 50px;
+            line-height: 1.7;
+        }
+
+        /* ===== COLLECTION SECTION ===== */
+        .collection {
+            padding: 120px 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* FILTER TABS */
+        .filter-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 60px;
+            flex-wrap: wrap;
+        }
+
+        .filter-tab {
+            padding: 10px 28px;
+            border-radius: 50px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1.5px solid rgba(197,165,114,0.3);
+            background: transparent;
+            color: var(--text-medium);
+        }
+
+        .filter-tab:hover,
+        .filter-tab.active {
+            background: var(--brown-dark);
+            color: var(--white);
+            border-color: var(--brown-dark);
+            transform: translateY(-2px);
+        }
+
+        /* PRODUCT GRID */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 35px;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            transition: all 0.5s var(--transition);
+            border: 1px solid rgba(197,165,114,0.1);
+            opacity: 0;
+            transform: translateY(40px);
+        }
+
+        .product-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .product-card:hover {
+            transform: translateY(-12px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .product-image-wrap {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 3/4;
+            background: var(--bg-warm);
+        }
+
+        .product-image-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s var(--transition);
+            filter: brightness(1.02) contrast(1.05);
+        }
+
+        .product-card:hover .product-image-wrap img {
+            transform: scale(1.1);
+        }
+
+        /* IMAGE OVERLAY */
+        .product-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 40%, rgba(26,26,26,0.7) 100%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            padding: 25px;
+        }
+
+        .product-card:hover .product-overlay {
+            opacity: 1;
+        }
+
+        .btn-commander {
+            background: var(--whatsapp);
+            color: var(--white);
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            transform: translateY(15px);
+            opacity: 0;
+            border: none;
+            cursor: pointer;
+        }
+
+        .product-card:hover .btn-commander {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .btn-commander:hover {
+            background: #1EB954;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37,211,102,0.4);
+        }
+
+        /* WISHLIST HEART */
+        .wishlist-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            cursor: pointer;
+            z-index: 5;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: all 0.4s ease;
+            color: var(--text-light);
+            font-size: 1rem;
+        }
+
+        .product-card:hover .wishlist-btn {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .wishlist-btn:hover,
+        .wishlist-btn.liked {
+            color: #E1306C;
+            transform: scale(1.15);
+        }
+
+        .wishlist-btn.liked {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* PRODUCT INFO */
+        .product-info {
+            padding: 22px 24px 26px;
+        }
+
+        .product-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--brown-dark);
+            margin-bottom: 6px;
+        }
+
+        .product-color {
+            font-size: 0.82rem;
+            color: var(--text-light);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .product-price-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .product-price {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--gold-dark);
+        }
+
+        .product-tag {
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--gold);
+            background: rgba(197,165,114,0.1);
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-weight: 600;
+        }
+
+        /* ===== ABOUT SECTION ===== */
+        .about {
+            padding: 120px 40px;
+            background: linear-gradient(180deg, var(--bg-cream) 0%, var(--bg-warm) 100%);
+        }
+
+        .about-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .about-image-area {
+            position: relative;
+        }
+
+        .about-image-main {
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: var(--shadow-medium);
+        }
+
+        .about-image-main img {
+            width: 100%;
+            display: block;
+            transition: transform 0.6s ease;
+        }
+
+        .about-image-main:hover img {
+            transform: scale(1.03);
+        }
+
+        .about-image-accent {
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            width: 180px;
+            height: 180px;
+            border: 3px solid var(--gold);
+            border-radius: 20px;
+            animation: float 7s ease-in-out infinite;
+        }
+
+        .about-text h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--brown-dark);
+            margin-bottom: 25px;
+            line-height: 1.2;
+        }
+
+        .about-text p {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.15rem;
+            color: var(--text-medium);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 24px 15px;
+            background: var(--white);
+            border-radius: 16px;
+            box-shadow: var(--shadow-soft);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--gold-dark);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.78rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text-light);
+            font-weight: 500;
+            margin-top: 6px;
+        }
+
+        /* ===== CTA BANNER ===== */
+        .cta-banner {
+            padding: 100px 40px;
+            background: var(--brown-dark);
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .cta-banner::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: 
+                radial-gradient(ellipse at 20% 50%, rgba(197,165,114,0.15), transparent 50%),
+                radial-gradient(ellipse at 80% 50%, rgba(197,165,114,0.1), transparent 50%);
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: var(--white);
+            margin-bottom: 15px;
+        }
+
+        .cta-subtitle {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            color: var(--gold-light);
+            margin-bottom: 35px;
+        }
+
+        .cta-whatsapp {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--whatsapp);
+            color: var(--white);
+            padding: 16px 40px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: all 0.4s ease;
+        }
+
+        .cta-whatsapp:hover {
+            background: #1EB954;
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 12px 35px rgba(37,211,102,0.4);
+        }
+
+        /* ===== CONTACT SECTION ===== */
+        .contact {
+            padding: 120px 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .contact-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 24px;
+            background: var(--white);
+            border-radius: 16px;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .contact-card-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .contact-card h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.05rem;
+            color: var(--brown-dark);
+            margin-bottom: 4px;
+        }
+
+        .contact-card p, .contact-card a {
+            font-size: 0.92rem;
+            color: var(--text-medium);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-card a:hover {
+            color: var(--gold-dark);
+        }
+
+        /* CONTACT FORM */
+        .contact-form-wrap {
+            background: var(--white);
+            border-radius: 24px;
+            padding: 45px;
+            box-shadow: var(--shadow-medium);
+        }
+
+        .contact-form-wrap h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--brown-dark);
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text-light);
+            margin-bottom: 8px;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 14px 18px;
+            border: 1.5px solid rgba(197,165,114,0.2);
+            border-radius: 12px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            background: var(--bg-cream);
+            transition: all 0.3s ease;
+            outline: none;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: var(--gold);
+            box-shadow: 0 0 0 3px rgba(197,165,114,0.15);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 110px;
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 16px;
+            background: var(--brown-dark);
+            color: var(--white);
+            border: none;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .form-submit:hover {
+            background: var(--gold-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(168,139,94,0.3);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--bg-dark);
+            color: var(--white);
+            padding: 80px 40px 30px;
+        }
+
+        .footer-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-top {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 50px;
+            padding-bottom: 50px;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .footer-brand img {
+            height: 50px;
+            margin-bottom: 20px;
+            filter: brightness(0) invert(1);
+        }
+
+        .footer-brand p {
+            font-size: 0.92rem;
+            color: rgba(255,255,255,0.5);
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 12px;
+        }
+
+        .footer-socials a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid rgba(255,255,255,0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255,255,255,0.6);
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .footer-socials a:hover {
+            background: var(--gold);
+            border-color: var(--gold);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        .footer-col h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.05rem;
+            margin-bottom: 20px;
+            color: var(--gold-light);
+        }
+
+        .footer-col a {
+            display: block;
+            color: rgba(255,255,255,0.5);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 10px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-col a:hover {
+            color: var(--gold-light);
+        }
+
+        .footer-bottom {
+            padding-top: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .footer-bottom p {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.3);
+        }
+
+        .footer-bottom p a {
+            color: var(--gold-light);
+            text-decoration: none;
+        }
+
+        /* ===== FLOATING WHATSAPP ===== */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 999;
+        }
+
+        .whatsapp-float a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background: var(--whatsapp);
+            border-radius: 50%;
+            color: var(--white);
+            font-size: 1.6rem;
+            box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+            transition: all 0.3s ease;
+            animation: waFloat 3s ease-in-out infinite;
+        }
+
+        .whatsapp-float a:hover {
+            transform: scale(1.12);
+            box-shadow: 0 6px 30px rgba(37,211,102,0.5);
+        }
+
+        @keyframes waFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        .wa-tooltip {
+            position: absolute;
+            right: 70px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--white);
+            padding: 10px 16px;
+            border-radius: 10px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            box-shadow: var(--shadow-soft);
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-float:hover .wa-tooltip {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* ===== SCROLL TO TOP ===== */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            width: 48px;
+            height: 48px;
+            background: var(--brown-dark);
+            color: var(--gold-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 998;
+            border: none;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            background: var(--gold-dark);
+            transform: translateY(-3px);
+        }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1100px) {
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .footer-top {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 50px;
+                text-align: center;
+                padding-top: 130px;
+            }
+            .hero-title { font-size: 3rem; }
+            .hero-ctas { justify-content: center; }
+            .hero-right { order: -1; }
+            .hero-image-container { max-width: 350px; margin: 0 auto; }
+            .hero-floating-badge { left: 50%; transform: translateX(-50%); bottom: -20px; }
+            .about-inner { grid-template-columns: 1fr; gap: 40px; }
+            .contact-grid { grid-template-columns: 1fr; }
+            .section-title { font-size: 2.4rem; }
+            .main-nav, .nav-socials { display: none; }
+            .hamburger { display: flex; }
+            .mobile-menu { display: flex; }
+        }
+
+        @media (max-width: 650px) {
+            .product-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+            .footer-top {
+                grid-template-columns: 1fr;
+            }
+            .hero-title { font-size: 2.5rem; }
+            .hero-subtitle { font-size: 1.1rem; }
+            .hero-ctas { flex-direction: column; align-items: center; }
+            .about-stats { grid-template-columns: 1fr; }
+            .cta-title { font-size: 2.2rem; }
+            .contact-form-wrap { padding: 30px; }
+            .announcement-bar { font-size: 0.65rem; letter-spacing: 1px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- PRELOADER -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-logo">
+            <img src="https://cdn.oreateai.com/aiimage/upload/3e86550df2a994fef861e797/82b55fbd713838a17934866eb730e306.png" alt="EUGENIE DE SOUZA">
+        </div>
+    </div>
+
+    <!-- CUSTOM CURSOR -->
+    <div class="custom-cursor" id="cursor"></div>
+
+    <!-- ANNOUNCEMENT BAR -->
+    <div class="announcement-bar">
+        <span>✦ Livraison disponible — Commandez vos sacs en fil de pêche artisanaux ✦ Pièces uniques faites à la main ✦</span>
+    </div>
+
+    <!-- HEADER -->
+    <header id="header">
+        <div class="header-inner">
+            <a href="#accueil" class="logo-area">
+                <img src="https://cdn.oreateai.com/aiimage/upload/3e86550df2a994fef861e797/82b55fbd713838a17934866eb730e306.png" alt="Logo EUGENIE DE SOUZA">
+            </a>
+
+            <nav class="main-nav">
+                <a href="#accueil">Accueil</a>
+                <a href="#collection">Collection</a>
+                <a href="#a-propos">À Propos</a>
+                <a href="#contact">Contact</a>
+            </nav>
+
+            <div class="nav-socials">
+                <a href="https://www.tiktok.com/@Eugenie%20de%20souza" target="_blank" rel="noopener" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.instagram.com/EUGENIE%20DE%20SOUZA" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/33663192356" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            </div>
+
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#accueil">Accueil</a>
+        <a href="#collection">Collection</a>
+        <a href="#a-propos">À Propos</a>
+        <a href="#contact">Contact</a>
+        <div style="display:flex;gap:20px;margin-top:20px;">
+            <a href="https://www.tiktok.com/@Eugenie%20de%20souza" target="_blank"><i class="fab fa-tiktok" style="font-size:1.5rem;color:#000"></i></a>
+            <a href="https://www.instagram.com/EUGENIE%20DE%20SOUZA" target="_blank"><i class="fab fa-instagram" style="font-size:1.5rem;color:#E1306C"></i></a>
+            <a href="https://wa.me/33663192356" target="_blank"><i class="fab fa-whatsapp" style="font-size:1.5rem;color:#25D366"></i></a>
+        </div>
+    </div>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="accueil">
+        <div class="hero-bg-pattern"></div>
+        <div class="hero-content">
+            <div class="hero-left">
+                <div class="hero-tag">
+                    <span class="dot"></span>
+                    Artisanat Français
+                </div>
+                <h1 class="hero-title">
+                    Sacs en<br>Fil de Pêche<br><span class="highlight">Artisanaux</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Chaque sac EUGENIE DE SOUZA est une pièce unique, tissée à la main avec passion et précision. Découvrez l'élégance de l'artisanat.
+                </p>
+                <div class="hero-ctas">
+                    <a href="#collection" class="btn-primary">
+                        Voir la Collection <i class="fas fa-arrow-right" style="font-size:0.75rem"></i>
+                    </a>
+                    <a href="https://wa.me/33663192356?text=Bonjour%2C%20je%20souhaite%20commander%20un%20sac%20EUGENIE%20DE%20SOUZA" class="btn-secondary" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Commander
+                    </a>
+                </div>
+            </div>
+            <div class="hero-right">
+                <div class="hero-image-container">
+                    <img src="https://cdn.oreateai.com/aiimage/upload/3e86550df2a994fef861e797/22a5eeb66050435f49628dd1794b0cfc.jpg" alt="Sac noir EUGENIE DE SOUZA en fil de pêche">
+                    <div class="hero-floating-badge">
+                        <div class="badge-icon"><i class="fas fa-gem"></i></div>
+                        <div>
+                            <div class="badge-text">Fait Main</div>
+                            <div class="badge-sub">Fil de pêche premium</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== COLLECTION ===== -->
+    <section class="collection" id="collection">
+        <div class="section-tag reveal">Notre Collection</div>
+        <div class="section-divider reveal"></div>
+        <h2 class="section-title reveal">Des Sacs qui Racontent<br>une Histoire</h2>
+        <p class="section-desc reveal">
+            Chaque modèle est confectionné à la main avec du fil de pêche de haute qualité, offrant résistance et élégance.
+        </p>
+
+        <div class="filter-tabs reveal">
+            <button class="filter-tab active" data-filter="all">Tous</button>
+            <button class="filter-tab" data-filter="classiques">Classiques</button>
+            <button class="filter-tab" data-filter="couleurs">Couleurs</button>
+            <button class="filter-tab" data-filter="multicolores">Multicolores</button>
+        </div>
+
+        <div class="product-grid">
+
+            <!-- PRODUIT 1 -->
+            <div class="product-card" data-category="classiques">
+                <div class="product-image-wrap">
+                    <img src="https://cdn.oreateai.com/aiimage/upload/3e86550df2a994fef861e797/22a5eeb66050435f49628dd1794b0cfc.jpg" alt="Sac Noir Classique" loading="lazy">
+                    <button class="wishlist-btn" onclick="toggleLike(this)"><i class="far fa-heart"></i></button>
+                    <div class="product-overlay">
+                        <a href="https://wa.me/33663192356?text=Bonjour%2C%20je%20souhaite%20commander%20le%20Sac%20Noir%20Classique" class="btn-commander" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Commander
+                        </a>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <div class="product-name">Sac Noir Classique</div>
+                    <div class="product-color">Noir — Pièce Unique</div>
+                    <div class="product-price-row">
+                        <span class="product-price">Sur demande</span>
+                        <span class="product-tag">Best-seller</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUIT 2 -->
+            <div class="product-card" data-category="classiques">
+                <div class="product-image-wrap">
+                    <img src="https://cdn.oreateai.com/aiimage/upload/3e86550df2a994fef861e797/5dfc4263cd76e690b6ef08ca303541a3.jpg" alt="Sac Rouge Élégant" loading="lazy">
+                    <button class="wishlist-btn" onclick="toggleLike(this)"><i class="far fa-heart"></i></button>
+                    <div class="product-overlay">
+                        <a href="https://wa.me/33663192356?text=Bonjour%2C%20je%20souhaite%20commander%20le%20Sac%20Rouge%20%C3%89l%C3%A9gant" class="btn-commander" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Commander
+                        </a>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <div class="product-name">Sac Rouge Élégant</div>
+                    <div class="product-color">Rouge — Motif Diamant</div>
+                    <div class="product-price-row">
+                        <span class="product-price">Sur demande</span>
+                        <span class="product-tag">Nouveau</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUIT 3 -->
+            <div class="product-card" data-category="couleurs">
+                <div class="product-image-wrap">
+                    <img src="https://cdn.oreateai.com/aiimage/upload/3e86550df2a994fef861e797/be8707cd7690e2e924991d6bc3206bcd.png" alt="Sac Bleu Royal" loading="lazy">
+                    <button class="wishlist-btn" onclick="toggleLike(this)"><i class="far fa-heart"></i></button>
+                    <div class="product-overlay">
+                        <a href="https://wa.me/33663192356?text=Bonjour%2C%20je%20souhaite%20commander%20le%20Sac%20Bleu%20Royal" class="btn-commander" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Commander
+                        </a>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <div class="product-name">Sac Bleu Royal</div>
+                    <div class="product-color">Bleu Royal — Tressé Main</div>
+                    <div class="product-price-row">
+                        <span class="product-price">Sur demande</span>
+                        <span class="product-tag">Exclusif</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUIT 4 -->
+            <div class="product-card" data-category="couleurs">
+                <div class="product-image-wrap">
+                    <img src="https://cdn.oreateai.com/aiimage/upload/3e86550df2a994fef861e797/f7d4289dd68d7ccb03943363fe671bad.png" alt="Sac Rose Vibrant" loading="lazy">
+                    <button class="wishlist-btn" onclick="toggleLike(this)"><i class="far fa-heart"></i></button>
+                    <div class="product-overlay">
+                        <a href="https://wa.me/33663192356?text=Bonjour%2C%20je%20souhaite%20commander%20le%20Sac%20Rose%20Vibrant" class="btn-commander" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Commander
+                        </a>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <div class="product-name">Sac Rose Vibrant</div>
+                    <div class="product-color">Rose — Motif Diamant</div>
+                    <div class="product-price-row">
+                        <span class="product-price">Sur demande</span>
+                        <span class="product-tag">Populaire</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUIT 5 -->
+            <div class="product-card" data-category="couleurs">
+                <div class="product-image-wrap">
+                    <img src="https://cdn.oreateai.com/aiimage/upload/3e86550df2a994fef861e797/ed42c07bce1eb08b86d3f81606d93377.jpg" alt="Sac Vert & Rose" loading="lazy">
+                    <button class="wishlist-btn" onclick="toggleLike(this)"><i class="far fa-heart"></i></button>
+                    <div class="product-overlay">
+                        <a href="https://wa.me/33663192356?text=Bonjour%2C%20je%20souhaite%20commander%20le%20Sac%20Vert%20%26%20Rose" class="btn-commander" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Commander
+                        </a>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <div class="product-name">Sac Vert & Rose</div>
+                    <div class="product-color">Vert — Accents Roses</div>
+                    <div class="product-price-row">
+                        <span class="product-price">Sur demande</span>
+                        <span class="product-tag">Original</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUIT 6 -->
+            <div class="product-card" data-category="multicolores">
+                <div class="product-image-wrap">
+                    <img src="https://cdn.oreateai.com/aiimage/upload/3e86550df2a994fef861e797/a6060a0e3e2b4f87c76ecc1182573875.jpg" alt="Sac Marron & Violet" loading="lazy">
+                    <button class="wishlist-btn" onclick="toggleLike(this)"><i class="far fa-heart"></i></button>
+                    <div class="product-overlay">
+                        <a href="https://wa.me/33663192356?text=Bonjour%2C%20je%20souhaite%20commander%20le%20Sac%20Marron%20%26%20Violet" class="btn-commander" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Commander
+                        </a>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <div class="product-name">Sac Marron & Violet</div>
+                    <div class="product-color">Marron — Accents Violets</div>
+                    <div class="product-price-row">
+                        <span class="product-price">Sur demande</span>
+                        <span class="product-tag">Unique</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUIT 7 -->
+            <div class="product-card" data-category="multicolores">
+                <div class="product-image-wrap">
+                    <img src="https://cdn.oreateai.com/aiimage/upload/3e86550df2a994fef861e797/9b73814b8a58c4c6c369fb5a887adf0f.jpg" alt="Sac Multicolore Tropical" loading="lazy">
+                    <button class="wishlist-btn" onclick="toggleLike(this)"><i class="far fa-heart"></i></button>
+                    <div class="product-overlay">
+                        <a href="https://wa.me/33663192356?text=Bonjour%2C%20je%20souhaite%20commander%20le%20Sac%20Multicolore%20Tropical" class="btn-commander" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Commander
+                        </a>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <div class="product-name">Sac Multicolore Tropical</div>
+                    <div class="product-color">Vert, Jaune, Violet, Noir</div>
+                    <div class="product-price-row">
+                        <span class="product-price">Sur demande</span>
+                        <span class="product-tag">Limited</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUIT 8 -->
+            <div class="product-card" data-category="multicolores">
+                <div class="product-image-wrap">
+                    <img src="https://cdn.oreateai.com/aiimage/upload/3e86550df2a994fef861e797/1549bbf06187540c254a5e360d5e056d.jpg" alt="Sac Moutarde & Bourgogne" loading="lazy">
+                    <button class="wishlist-btn" onclick="toggleLike(this)"><i class="far fa-heart"></i></button>
+                    <div class="product-overlay">
+                        <a href="https://wa.me/33663192356?text=Bonjour%2C%20je%20souhaite%20commander%20le%20Sac%20Moutarde%20%26%20Bourgogne" class="btn-commander" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Commander
+                        </a>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <div class="product-name">Sac Moutarde & Bourgogne</div>
+                    <div class="product-color">Moutarde, Bourgogne, Olive</div>
+                    <div class="product-price-row">
+                        <span class="product-price">Sur demande</span>
+                        <span class="product-tag">Édition limitée</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section class="about" id="a-propos">
+        <div class="about-inner">
+            <div class="about-image-area reveal">
+                <div class="about-image-main">
+                    <img src="https://cdn.oreateai.com/aiimage/upload/3e86550df2a994fef861e797/22a5eeb66050435f49628dd1794b0cfc.jpg" alt="Atelier EUGENIE DE SOUZA">
+                </div>
+                <div class="about-image-accent"></div>
+            </div>
+            <div class="about-text reveal">
+                <div class="section-tag" style="text-align:left">Notre Histoire</div>
+                <div class="section-divider" style="margin:0 0 20px"></div>
+                <h3>L'Art du Fil de Pêche,<br>Élevé en Style</h3>
+                <p>
+                    EUGENIE DE SOUZA est née de la passion pour l'artisanat et le design. Chaque sac est minutieusement tissé à la main à partir de fil de pêche de haute qualité, créant des pièces uniques qui allient résistance et raffinement.
+                </p>
+                <p>
+                    De la sélection des matériaux à la dernière touche, chaque étape est réalisée avec soin pour vous offrir un accessoire qui vous ressemble — élégant, durable et résolument original.
+                </p>
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="100">0</span>
+                        <div class="stat-label">Créations</div>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="50">0</span>
+                        <div class="stat-label">Clients</div>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="3">0</span>
+                        <div class="stat-label">Années</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA BANNER ===== -->
+    <section class="cta-banner">
+        <div class="cta-content reveal">
+            <h2 class="cta-title">Prête à Porter l'Unique ?</h2>
+            <p class="cta-subtitle">Contactez-nous sur WhatsApp pour commander votre sac en fil de pêche sur mesure</p>
+            <a href="https://wa.me/33663192356?text=Bonjour%2C%20je%20souhaite%20commander%20un%20sac%20EUGENIE%20DE%20SOUZA" class="cta-whatsapp" target="_blank">
+                <i class="fab fa-whatsapp" style="font-size:1.3rem"></i> Commander sur WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section class="contact" id="contact">
+        <div class="section-tag reveal">Contact</div>
+        <div class="section-divider reveal"></div>
+        <h2 class="section-title reveal">Parlons de Votre<br>Prochain Sac</h2>
+        <p class="section-desc reveal">
+            Une question, une commande personnalisée ou simplement envie de découvrir nos créations ? Nous sommes à votre écoute.
+        </p>
+
+        <div class="contact-grid">
+            <div class="contact-info reveal">
+                <div class="contact-card">
+                    <div class="contact-card-icon"><i class="fab fa-whatsapp"></i></div>
+                    <div>
+                        <h4>WhatsApp</h4>
+                        <a href="https://wa.me/33663192356" target="_blank">+33 663 19 23 56</a>
+                    </div>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-card-icon"><i class="fas fa-phone"></i></div>
+                    <div>
+                        <h4>Téléphone</h4>
+                        <a href="tel:+33663192356">+33 663 19 23 56</a>
+                    </div>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-card-icon"><i class="fab fa-tiktok"></i></div>
+                    <div>
+                        <h4>TikTok</h4>
+                        <a href="https://www.tiktok.com/@Eugenie%20de%20souza" target="_blank">@Eugenie de souza</a>
+                    </div>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-card-icon"><i class="fab fa-instagram"></i></div>
+                    <div>
+                        <h4>Instagram</h4>
+                        <a href="https://www.instagram.com/EUGENIE%20DE%20SOUZA" target="_blank">EUGENIE DE SOUZA</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form-wrap reveal">
+                <h3>Envoyez-nous un message</h3>
+                <form id="contactForm" onsubmit="sendToWhatsApp(event)">
+                    <div class="form-group">
+                        <label for="name">Nom complet</label>
+                        <input type="text" id="name" name="name" placeholder="Votre nom" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Téléphone</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+33 6 XX XX XX XX">
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Sujet</label>
+                        <select id="subject" name="subject">
+                            <option value="Commande">Commande de sac</option>
+                            <option value="Personnalisation">Sac sur mesure</option>
+                            <option value="Information">Demande d'information</option>
+                            <option value="Autre">Autre</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" placeholder="Décrivez votre demande..." required></textarea>
+                    </div>
+                    <button type="submit" class="form-submit">
+                        <i class="fab fa-whatsapp"></i> Envoyer via WhatsApp
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <img src="https://cdn.oreateai.com/aiimage/upload/3e86550df2a994fef861e797/82b55fbd713838a17934866eb730e306.png" alt="EUGENIE DE SOUZA">
+                    <p>Créations artisanales de sacs en fil de pêche. Pièces uniques, élégance intemporelle.</p>
+                    <div class="footer-socials">
+                        <a href="https://www.tiktok.com/@Eugenie%20de%20souza" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://www.instagram.com/EUGENIE%20DE%20SOUZA" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/33663192356" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Navigation</h4>
+                    <a href="#accueil">Accueil</a>
+                    <a href="#collection">Collection</a>
+                    <a href="#a-propos">À Propos</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Collection</h4>
+                    <a href="#collection">Sacs Classiques</a>
+                    <a href="#collection">Sacs Couleurs</a>
+                    <a href="#collection">Sacs Multicolores</a>
+                    <a href="#collection">Sur Mesure</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <a href="tel:+33663192356">+33 663 19 23 56</a>
+                    <a href="https://wa.me/33663192356" target="_blank">WhatsApp</a>
+                    <a href="https://www.tiktok.com/@Eugenie%20de%20souza" target="_blank">TikTok</a>
+                    <a href="https://www.instagram.com/EUGENIE%20DE%20SOUZA" target="_blank">Instagram</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 EUGENIE DE SOUZA — Tous droits réservés</p>
+                <p>Fait avec <i class="fas fa-heart" style="color:var(--gold);font-size:0.7rem"></i> & Fil de Pêche</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FLOATING WHATSAPP -->
+    <div class="whatsapp-float">
+        <a href="https://wa.me/33663192356?text=Bonjour%2C%20je%20souhaite%20avoir%20des%20informations%20sur%20vos%20sacs" target="_blank" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <div class="wa-tooltip">Commander sur WhatsApp</div>
+    </div>
+
+    <!-- SCROLL TO TOP -->
+    <button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        // PRELOADER
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('preloader').classList.add('hidden');
+            }, 1200);
+        });
+
+        // CUSTOM CURSOR (desktop only)
+        if (window.innerWidth > 900) {
+            const cursor = document.getElementById('cursor');
+            document.addEventListener('mousemove', e => {
+                cursor.style.left = e.clientX - 10 + 'px';
+                cursor.style.top = e.clientY - 10 + 'px';
+            });
+            document.querySelectorAll('a, button, .product-card, .filter-tab').forEach(el => {
+                el.addEventListener('mouseenter', () => cursor.classList.add('active'));
+                el.addEventListener('mouseleave', () => cursor.classList.remove('active'));
+            });
+        } else {
+            document.getElementById('cursor').style.display = 'none';
+        }
+
+        // HEADER SCROLL
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+
+            // Scroll to top button
+            const scrollTop = document.getElementById('scrollTop');
+            if (window.scrollY > 600) {
+                scrollTop.classList.add('visible');
+            } else {
+                scrollTop.classList.remove('visible');
+            }
+        });
+
+        // HAMBURGER
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            mobileMenu.classList.toggle('open');
+            document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+        });
+
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                mobileMenu.classList.remove('open');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // FILTER TABS
+        const filterTabs = document.querySelectorAll('.filter-tab');
+        const productCards = document.querySelectorAll('.product-card');
+
+        filterTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                filterTabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+
+                const filter = tab.dataset.filter;
+
+                productCards.forEach((card, i) => {
+                    if (filter === 'all' || card.dataset.category === filter) {
+                        card.style.display = 'block';
+                        card.style.animation = `fadeInUp 0.6s ease ${i * 0.1}s both`;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // WISHLIST
+        function toggleLike(btn) {
+            btn.classList.toggle('liked');
+            const icon = btn.querySelector('i');
+            if (btn.classList.contains('liked')) {
+                icon.classList.replace('far', 'fas');
+                btn.style.transform = 'scale(1.3)';
+                setTimeout(() => btn.style.transform = '', 300);
+            } else {
+                icon.classList.replace('fas', 'far');
+            }
+        }
+
+        // SCROLL REVEAL
+        const revealEls = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+        revealEls.forEach(el => revealObserver.observe(el));
+
+        // PRODUCT CARDS ANIMATION ON SCROLL
+        const productObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry, i) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, i * 100);
+                    productObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        productCards.forEach(card => productObserver.observe(card));
+
+        // COUNTER ANIMATION
+        const counterEls = document.querySelectorAll('.stat-number');
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const target = +entry.target.dataset.target;
+                    let count = 0;
+                    const duration = 2000;
+                    const step = target / (duration / 16);
+                    const counter = setInterval(() => {
+                        count += step;
+                        if (count >= target) {
+                            entry.target.textContent = target + '+';
+                            clearInterval(counter);
+                        } else {
+                            entry.target.textContent = Math.floor(count) + '+';
+                        }
+                    }, 16);
+                    counterObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        counterEls.forEach(el => counterObserver.observe(el));
+
+        // CONTACT FORM -> WHATSAPP
+        function sendToWhatsApp(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+
+            const waText = encodeURIComponent(
+                `Bonjour EUGENIE DE SOUZA !\n\n` +
+                `Nom: ${name}\n` +
+                `Téléphone: ${phone}\n` +
+                `Sujet: ${subject}\n` +
+                `Message: ${message}\n\n` +
+                `Merci !`
+            );
+
+            window.open(`https://wa.me/33663192356?text=${waText}`, '_blank');
+        }
+
+        // SMOOTH SCROLL for nav links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // 3D TILT effect on product cards
+        productCards.forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                const rotateX = (y - centerY) / centerY * -3;
+                const rotateY = (x - centerX) / centerX * 3;
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-12px)`;
+            });
+
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = '';
+            });
+        });
+
+        // PARALLAX on hero
+        window.addEventListener('scroll', () => {
+            const scrolled = window.scrollY;
+            const heroContent = document.querySelector('.hero-left');
+            const heroImage = document.querySelector('.hero-image-container');
+            if (heroContent && scrolled < 800) {
+                heroContent.style.transform = `translateY(${scrolled * 0.15}px)`;
+                heroImage.style.transform = `translateY(${scrolled * 0.08}px)`;
+            }
+        });
+    </script>
+
+</body>
+</html>
